@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App 🌤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather App 🌤️</h1>
+            <p class="subtitle">Find weather information for any city</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name..." 
+                    autocomplete="off"
+                >
+                <button id="searchBtn">Search</button>
+                <button id="locationBtn" title="Use current location">📍</button>
+            </div>
+            <div id="loadingSpinner" class="spinner hidden"></div>
+        </div>
+
+        <div id="errorContainer" class="error-container hidden">
+            <p id="errorMessage"></p>
+            <button id="closeErrorBtn">✕</button>
+        </div>
+
+        <div id="weatherContainer" class="weather-container hidden">
+            <div class="weather-header">
+                <div class="city-info">
+                    <h2 id="cityName"></h2>
+                    <p id="weatherDescription"></p>
+                </div>
+                <div class="weather-icon">
+                    <span id="weatherIcon"></span>
+                </div>
+            </div>
+
+            <div class="weather-main">
+                <div class="temp-display">
+                    <span id="temperature" class="temperature"></span>
+                    <span class="temp-unit">°C</span>
+                </div>
+                <p class="feels-like">Feels like <span id="feelsLike"></span>°C</p>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-card">
+                    <div class="detail-label">Humidity</div>
+                    <div class="detail-value"><span id="humidity"></span>%</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-label">Wind Speed</div>
+                    <div class="detail-value"><span id="windSpeed"></span> km/h</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-label">Pressure</div>
+                    <div class="detail-value"><span id="pressure"></span> hPa</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-label">UV Index</div>
+                    <div class="detail-value"><span id="uvIndex"></span></div>
+                </div>
+            </div>
+
+            <div class="weather-extra">
+                <div class="extra-card">
+                    <span class="label">Sunrise:</span>
+                    <span id="sunrise" class="value"></span>
+                </div>
+                <div class="extra-card">
+                    <span class="label">Sunset:</span>
+                    <span id="sunset" class="value"></span>
+                </div>
+                <div class="extra-card">
+                    <span class="label">Visibility:</span>
+                    <span id="visibility" class="value"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="welcomeContainer" class="welcome-container">
+            <div class="welcome-content">
+                <p>👋 Welcome to Weather App!</p>
+                <p>Enter a city name or use your current location to get started.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
